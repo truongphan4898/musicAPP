@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>View Song</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+<h1>View Song</h1>
+<div>
+    <label>Name:</label>
+    <span th:text="${song.name}"></span>
+</div>
+<div>
+    <label>Artist:</label>
+    <span th:text="${song.artist}"></span>
+</div>
+<div>
+    <label>Genre:</label>
+    <span th:text="${song.genre}"></span>
+</div>
+<div>
+    <label>File:</label>
+    <audio controls th:src="@{/uploads/{fileName}(fileName=${song.filePath})}"></audio>
+</div>
+<a href="/songs" class="btn btn-secondary">Back to List</a>
+</body>
+</html>
